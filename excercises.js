@@ -10,17 +10,19 @@ function max(num1, num2){
     "use strict";
     //...
     if (num1 > num2) {
-      return (num1 + " is greater than " + num2);
+      return (num1) // + " is greater than " + num2);
     } else if (num2 > num1){
-      return (num2 + " is greater than " + num1);
+      return (num2) // + " is greater than " + num1);
     } else if (num1 === num2) {
-      return " Dude, these numbers are equal!";
+      return "Dude, these numbers are equal!";
     }
 
 
 }
 
-
+console.assert(max(1,2) == 2 );
+console.assert(max(55,-1) == 55);
+console.assert(max(5,5) == "Dude, these numbers are equal!" );
 
 
 // ---------------------
@@ -36,15 +38,18 @@ function maxOfThree(num1, num2, num3){
     } else if ( num3 === num2 || num3 === num1 || num1 === num2) {
       return "There are two numbers that are the same"
     } else if (num1 > num2 && num1 > num3) {
-      return (num1 + " is greater than " + num2 + " and also " + num3);
+      return (num1) // + " is greater than " + num2 + " and also " + num3);
     } else if (num2 > num1 && num2 > num3){
-      return (num2 + " is greater than " + num1 + " and also " + num3);
+      return (num2) // + " is greater than " + num1 + " and also " + num3);
     } else if (num3 > num1 && num3 > num2){
-      return (num3 + " is greater than " + num1 + " and also " + num2);
+      return (num3) //+ " is greater than " + num1 + " and also " + num2);
     }
   }
 
-
+console.assert(maxOfThree(1,2,4) == 4 );
+console.assert(maxOfThree(55,-2,0) == 55 );
+console.assert(maxOfThree(2,2,4) == "There are two numbers that are the same" );
+console.assert(maxOfThree(2,2,2) == " Dude, these numbers are equal!");
 
 
 // ---------------------
@@ -65,6 +70,10 @@ function isVowel(char){
 }
 
   // console.log(isVowel('a'));
+console.assert(isVowel('a') == true);
+console.assert(isVowel('b') == false);
+console.assert(isVowel('y') == "Sometimes true :P");
+console.assert(isVowel('12') == false);
 
 
 // ---------------------
@@ -89,7 +98,8 @@ function rovarspraket(phrase){
     return roverArray1;
 }
 
-// rovarspraket("this is fun");
+console.assert(rovarspraket("this is fun") == "tothohisos isos fofunon");
+
 
 // ---------------------
 // Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
@@ -106,9 +116,11 @@ function sum(array1){
       total += numArrayToAdd[i];
 
       }
-      console.log(total);
+      // console.log(total);
       return total;
 }
+console.assert(sum([1,-2,3,4, .5]) == 6.5);
+console.assert(sum([0, 2,3,4, .5]) === 9.5);
 
   // sum([1,-2,3,4, .5]);
 //
@@ -123,10 +135,11 @@ function multiply(array2){
       total *= numArrayToMultiply[i];
 
       }
-      console.log(total);
+      // console.log(total);
       return total;
 }
-
+console.assert(multiply([1,-2, 3, 4, .5]) == -12);
+console.assert(multiply([0,-2,3,4, .5]) == 0);
 // multiply([1,2,3,4]);
 
 // ---------------------
@@ -144,10 +157,14 @@ function reverse(phrase){
     var phraseJoined = phraseReverse.join("");
     // console.log(phraseJoined);
     return phraseJoined;
+    console.log(phraseJoined);
 }
 
+console.assert(reverse("Hey there good buddy, did you hear about Clemson winning the Natty!") == "!yttaN eht gninniw nosmelC tuoba raeh uoy did ,yddub doog ereht yeH");
+
+
 //checking to see if output works...
-// console.log(reverse("Hey there good buddy, did you hear about Clemson winning the Natty!"));
+console.assert(reverse("I like cheese and sometimes pancakes") == "sekacnap semitemos dna eseehc ekil I");
 // ---------------------
 // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
 // ---------------------
@@ -173,7 +190,8 @@ function findLongestWord(words){
       return longestWords.length;
 }
 
-// console.log(findLongestWord("I am reaDy to be the longest"));
+console.assert(findLongestWord("I am reaDy to be the longest") == 7);
+console.assert(findLongestWord("I went to Clemson to study Biology and Herpetology, I also enjoyed the study of evolutionary-embryology") == 23);
 // ---------------------
 // Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
 // ---------------------
@@ -183,7 +201,7 @@ function filterLongWords(words, i){
     var num = i;
     var wordsArray = words.split(" ");
     var newArray = [];
-    console.log(wordsArray);
+    // console.log(wordsArray);
     //...
     for (var j = 0; j < wordsArray.length; j++) {
 
@@ -197,7 +215,10 @@ function filterLongWords(words, i){
     // console.log(newArray);
     return(newArray);
 }
-// filterLongWords("I like cheese and extra vocabulary", 4);
+
+
+var arrayChecker = filterLongWords("I like cheese and extra vocabulary", 4);
+console.assert(arrayChecker.length == 3);
 // ---------------------
 // Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
 // ---------------------
@@ -223,8 +244,12 @@ function charFreq(string){
         charFrequency[char] = 1;
       }
     }
-
-    console.log(charFrequency)
+    console.log(charFrequency);
+    return charFrequency;
 }
 
-charFreq("asdasfasdfsadfaewfgsdvgsdfasdasdghsda");
+var freqChecker = charFreq("asdasfasdfsadfaewfgsdvgsdfasdasdghsda");
+
+console.assert(freqChecker.a == 8);
+console.assert(freqChecker.d == 8);
+console.assert(freqChecker.z == undefined);
