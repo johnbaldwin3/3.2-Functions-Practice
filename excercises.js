@@ -172,8 +172,8 @@ console.assert(reverse("I like cheese and sometimes pancakes") == "sekacnap semi
 function findLongestWord(words){
     "use strict";
     //...
-    //add words to array
-    var wordsInArray = words.split(" ");
+    //add words to array    //had set up to take string and turn to array with split....
+    var wordsInArray = words;//.split(" ");
     var longestWords = '';
     // console.log(wordsInArray.length);
     // console.log(longestWords.length);
@@ -190,8 +190,8 @@ function findLongestWord(words){
       return longestWords.length;
 }
 
-console.assert(findLongestWord("I am reaDy to be the longest") == 7);
-console.assert(findLongestWord("I went to Clemson to study Biology and Herpetology, I also enjoyed the study of evolutionary-embryology") == 23);
+console.assert(findLongestWord(["I", 'am', 'reaDy', 'to', "longest"]) == 7);
+//console.log(findLongestWord(["I", 'am', 'reaDy', 'to', "longest"]));
 // ---------------------
 // Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
 // ---------------------
